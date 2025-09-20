@@ -28,11 +28,20 @@ def calculate_first(data,name):
     print(first_list)
     
 
+def calculateSweeps(data,name):
+    sweeps = 0
+    for row in data:
+        if row[9] == row[10] and row[9] != name and (row[2] == name or row[3] == name):
+            print(row[2] + ", " + row[3])
+            sweeps += 1
+    print(sweeps)
+
 
 def main():
     stats = read_data()
     del stats[0] #remove first list
-    calculate_first(stats,"Benjamin Wheeler")
+    calculate_first(stats,"Nelson Salahub")
+    calculateSweeps(stats,"Benjamin Wheeler")
 
 if __name__ == "__main__":
     main()
